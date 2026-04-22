@@ -287,9 +287,9 @@ const registeredNames = new Set();
                 
                 throw error;
             }
-        } else {
-            logger.info('Skipping global command registration - bot is guild-only');
-        }
+      } else {
+        await client.application.commands.set(commands);
+      }
     } catch (error) {
         logger.error('Error registering commands:', error);
         throw error;
